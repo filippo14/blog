@@ -1,0 +1,63 @@
+baseURL: "http://localhost:1313/"
+languageCode: "en-us"
+title: "Filippo Moret"
+theme: "PaperMod"
+pagination:
+  pagerSize: 5
+
+minify:
+  disableXML: true
+  minifyOutput: false
+
+params:
+  author: "Filippo Moret"
+  description: "Your blog's description."
+  defaultTheme: "auto"
+  enableArchive: true
+  # dateFormat: "January 2, 2006"
+  ShowReadingTime: false
+  ShowShareButtons: false
+  ShowPostNavLinks: true
+  ShowBreadCrumbs: false
+  ShowCodeCopyButtons: true
+  ShowWordCount: false
+  ShowRssButtonInSectionTermList: false
+  ShowToc: false
+  TocOpen: false
+
+  # profileMode: # This should be disabled or removed for Home-Info Mode to show posts below
+  #   enabled: false 
+
+  homeInfoParams: # As per PaperMod documentation for Home-Info Mode
+    Title: "Ciao 👋"
+    Content: "Welcome to my personal space where I write about AI, software, and other things that fascinate me."
+
+  socialIcons:
+    - name: linkedin
+      url: "YOUR_LINKEDIN_URL" # <<< PLEASE PROVIDE YOUR LINKEDIN URL
+    # - name: github
+    #   url: "YOUR_GITHUB_URL"
+
+  label:
+    text: "Filippo Moret"
+
+  mainSections: "posts" # Or just `mainSections = "posts"` depending on PaperMod version
+
+menu:
+  main:
+    - identifier: "archive"
+      name: "Archive"
+      url: "/posts/"
+      weight: 10
+    - identifier: "tags"
+      name: "Tags"
+      url: "/tags/"
+      weight: 20
+    - identifier: "about"
+      name: "About"
+      url: "/about/"
+      weight: 30
+
+# For the homepage to list posts from 'content/posts/'
+outputs:
+  home: ["HTML", "RSS", "JSON"] 
