@@ -1,0 +1,74 @@
+name: Deploy Site to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    concurrency:
+        group: ${{ github.workflow }}-${{ github.ref }}
+    env:
+      HUGO_VERSION: 0.146.0
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          submodules: true
+          fetch-depth: 0
+
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v3
+        with:
+          hugo-version: ${{ env.HUGO_VERSION }}
+          extended: true # Crucial for PaperMod as it uses SCSS (SASS) which requires the Hugo extended version
+      
+      - name: Setup GitHub Pages
+        id: pages
+        uses: actions/configure-pages@v5
+      
+      - name: Build site
+        env:
+          HUGO_ENV: production # Sets Hugo environment to 'production' for optimizations
+          # The HUGO_BASEURL is dynamically set by the --baseURL flag below, using output from the 'Setup GitHub Pages' step.
+        run: |
+          echo "Building with BaseURL: ${{ steps.pages.outputs.base_url }}/"
+          # Builds the Hugo site. 
+          # --gc enables garbage collection to clean up unused cache files.
+          # --minify reduces the size of HTML, CSS, JS, etc.
+          # --baseURL sets the site's base URL, essential for correct links on GitHub Pages.
+          hugo --gc --minify --baseURL "${{ steps.pages.outputs.base_url }}/"
+
+      - name: Upload artifact for GitHub Pages deployment
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./public
+
+  deploy:
+    needs: build
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main' # Replace 'main' if your deploy branch is different
+    
+    permissions:
+      pages: write
+      id-token: write
+    
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    
+    runs-on: ubuntu-latest
+    
+    # Concurrency settings for deployment to ensure only one deployment to GitHub Pages happens at a time.
+    # It does not cancel in-progress deployments to avoid interrupting a live update.
+    concurrency:
+        group: "pages"
+        cancel-in-progress: false 
+        
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

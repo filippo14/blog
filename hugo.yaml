@@ -25,23 +25,20 @@ params:
   ShowToc: false
   TocOpen: false
 
-  # profileMode: # This should be disabled or removed for Home-Info Mode to show posts below
-  #   enabled: false 
-
-  homeInfoParams: # As per PaperMod documentation for Home-Info Mode
+  homeInfoParams:
     Title: "Ciao 👋"
-    Content: "Welcome to my personal space where I write about AI, software, and other things that fascinate me."
+    Content: "This is my personal corner of the internet. Expect deep dives, curious and fictional conversations about the evolving world of AI, and thoughts from an SRE-ish perspective."
 
   socialIcons:
     - name: linkedin
-      url: "YOUR_LINKEDIN_URL" # <<< PLEASE PROVIDE YOUR LINKEDIN URL
+      url: "https://www.linkedin.com/in/filippomoret/"
     # - name: github
     #   url: "YOUR_GITHUB_URL"
 
   label:
     text: "Filippo Moret"
 
-  mainSections: "posts" # Or just `mainSections = "posts"` depending on PaperMod version
+  mainSections: "posts" 
 
 menu:
   main:
@@ -49,15 +46,22 @@ menu:
       name: "Archive"
       url: "/posts/"
       weight: 10
+    - identifier: "search"
+      name: "Search"
+      url: "/search/"
+      weight: 20
     - identifier: "tags"
       name: "Tags"
       url: "/tags/"
-      weight: 20
+      weight: 30
     - identifier: "about"
       name: "About"
       url: "/about/"
-      weight: 30
+      weight: 40
 
 # For the homepage to list posts from 'content/posts/'
 outputs:
-  home: ["HTML", "RSS", "JSON"] 
+  home: ["HTML", "RSS", "JSON"]
+  section: ["HTML", "RSS"]
+  taxonomy: ["HTML", "RSS"]
+  term: ["HTML", "RSS"] 
