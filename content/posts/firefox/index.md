@@ -1,6 +1,6 @@
 ---
 title: "#1 What Happens When Firefox Knows You're Offline"
-date: 2025-05-25T10:00:00+02:00 # Current date/time
+date: 2025-05-31T10:00:00+02:00
 tags: ["software", "deep-dive"]
 summary: "Ever wonder how Firefox *instantly* knows you're offline? Dive in for a peek under the hood of browser magic!"
 # cover:

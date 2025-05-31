@@ -2,28 +2,40 @@ baseURL: "http://localhost:1313/"
 languageCode: "en-us"
 title: "Filippo Moret"
 theme: "PaperMod"
-pagination:
-  pagerSize: 5
+enableRobotsTXT: true # Ensures robots.txt is generated
 
-minify:
-  disableXML: true
-  minifyOutput: false
+# Minification settings - can be enabled for production
+# minify:
+#   disableXML: true
+#   minifyOutput: true
 
 params:
+  # env: production # HUGO_ENV=production is set in GitHub Actions workflow for deployments
   author: "Filippo Moret"
-  description: "Your blog's description."
+  description: "A blog about AI, SRE, and technology."
+  keywords: ["AI", "SRE", "technology", "infrastructure", "blog", "software", "Filippo Moret"]
+  # images: ["/path/to/your/default-social-image.jpg"] # Site-wide image for OpenGraph/Twitter if no page image
+
   defaultTheme: "auto"
   enableArchive: true
   # dateFormat: "January 2, 2006"
   ShowReadingTime: false
-  ShowShareButtons: false
+  ShowShareButtons: false # Enable for SEO (social signals)
   ShowPostNavLinks: true
-  ShowBreadCrumbs: false
+  ShowBreadCrumbs: true # Good for SEO and UX
   ShowCodeCopyButtons: true
   ShowWordCount: false
-  ShowRssButtonInSectionTermList: false
-  ShowToc: false
+  ShowRssButtonInSectionTermList: true # Good for discoverability
+  ShowToc: false 
   TocOpen: false
+
+  # Favicon and Apple Touch Icons (place these in your static/ folder)
+  # assets:
+  #   favicon: "/favicon.ico"
+  #   favicon16x16: "/favicon-16x16.png"
+  #   favicon32x32: "/favicon-32x32.png"
+  #   apple_touch_icon: "/apple-touch-icon.png"
+  #   safari_pinned_tab: "/safari-pinned-tab.svg"
 
   homeInfoParams:
     Title: "Ciao 👋"
@@ -38,7 +50,7 @@ params:
   label:
     text: "Filippo Moret"
 
-  mainSections: "posts" 
+  mainSections: "posts"
 
 menu:
   main:
@@ -59,9 +71,14 @@ menu:
       url: "/about/"
       weight: 40
 
-# For the homepage to list posts from 'content/posts/'
 outputs:
   home: ["HTML", "RSS", "JSON"]
-  section: ["HTML", "RSS"]
-  taxonomy: ["HTML", "RSS"]
-  term: ["HTML", "RSS"] 
+  section: ["HTML", "RSS", "JSON"]
+  taxonomy: ["HTML", "RSS", "JSON"]
+  term: ["HTML", "RSS", "JSON"]
+
+# services:
+#   googleAnalytics:
+#     ID: "YOUR_GA_MEASUREMENT_ID" # Replace with your GA4 Measurement ID
+
+# For the homepage to list posts from 'content/posts/'
