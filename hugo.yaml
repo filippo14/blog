@@ -20,7 +20,8 @@ params:
   enableArchive: true
   # dateFormat: "January 2, 2006"
   ShowReadingTime: false
-  ShowShareButtons: false # Enable for SEO (social signals)
+  ShowShareButtons: true # Enable for SEO (social signals)
+  ShareButtons: ["linkedin", "twitter", "reddit", "whatsapp", "telegram", "facebook"]
   ShowPostNavLinks: true
   ShowBreadCrumbs: true # Good for SEO and UX
   ShowCodeCopyButtons: true
