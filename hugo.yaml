@@ -1,6 +1,6 @@
 baseURL: "http://localhost:1313/"
 languageCode: "en-us"
-title: "Filippo Moret"
+title: "Filippo Moret | Exploring Infrastructure, SRE & AI"
 theme: "PaperMod"
 enableRobotsTXT: true # Ensures robots.txt is generated
 
@@ -11,8 +11,8 @@ minify:
 params:
   # env: production # HUGO_ENV=production is set in GitHub Actions workflow for deployments
   author: "Filippo Moret"
-  description: "A blog about AI, SRE, and technology."
-  keywords: ["AI", "SRE", "technology", "infrastructure", "blog", "software", "Filippo Moret"]
+  description: "Join Filippo Moret exploring curiosities around software infrastructure and the evolving world of AI through an SRE lens."
+  keywords: ["AI", "SRE", "technology", "infrastructure", "devops", "blog", "artificial intelligence", "software ", "Filippo Moret"]
   # images: ["/path/to/your/default-social-image.jpg"] # Site-wide image for OpenGraph/Twitter if no page image
 
   defaultTheme: "auto"
@@ -37,8 +37,8 @@ params:
     apple_touch_icon: "favicon/apple-touch-icon.png"
 
   homeInfoParams:
-    Title: "Ciao 👋"
-    Content: "This is my personal corner of the internet. Expect deep dives, curious and fictional conversations about the evolving world of AI, and thoughts from an SRE-ish perspective."
+    Title: "Exploring Infrastructure, SRE & AI"
+    Content: "Ciao, welcome! 👋 This is my personal corner of the internet. Expect deep dives, curious and fictional conversations about the evolving world of AI, and thoughts from an SRE-ish perspective."
 
   socialIcons:
     - name: linkedin
