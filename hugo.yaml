@@ -4,10 +4,9 @@ title: "Filippo Moret"
 theme: "PaperMod"
 enableRobotsTXT: true # Ensures robots.txt is generated
 
-# Minification settings - can be enabled for production
-# minify:
-#   disableXML: true
-#   minifyOutput: true
+minify:
+  disableXML: true
+  minifyOutput: true
 
 params:
   # env: production # HUGO_ENV=production is set in GitHub Actions workflow for deployments
@@ -31,12 +30,11 @@ params:
   TocOpen: false
 
   # Favicon and Apple Touch Icons (place these in your static/ folder)
-  # assets:
-  #   favicon: "/favicon.ico"
-  #   favicon16x16: "/favicon-16x16.png"
-  #   favicon32x32: "/favicon-32x32.png"
-  #   apple_touch_icon: "/apple-touch-icon.png"
-  #   safari_pinned_tab: "/safari-pinned-tab.svg"
+  assets:
+    favicon: "favicon/favicon.ico"
+    favicon16x16: "favicon/favicon-16x16.png"
+    favicon32x32: "favicon/favicon-32x32.png"
+    apple_touch_icon: "favicon/apple-touch-icon.png"
 
   homeInfoParams:
     Title: "Ciao 👋"

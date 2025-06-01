@@ -3,6 +3,7 @@ title = '{{ replace .File.ContentBaseName "-" " " | title }}'
 date = '{{ .Date }}'
 draft = true
 description = "" # Add a 1-2 sentence description of the post here for SEO
+tags = []
 keywords = [] # Add 3-5 specific keywords for this post, e.g., ["keyword1", "keyword2"]
 # author = "Filippo Moret" # Uncomment if you want to set a default author per post, otherwise site author is used
 
