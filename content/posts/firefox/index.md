@@ -2,11 +2,8 @@
 title: "#1 What Happens When Firefox Knows You're Offline"
 date: 2025-05-31T10:00:00+02:00
 tags: ["software", "deep-dive"]
+keywords: ["Firefox", "offline", "browser", "networking", "NS_ERROR_OFFLINE", "mozilla", "deep-dive", "software"]
 summary: "Ever wonder how Firefox *instantly* knows you're offline? Dive in for a peek under the hood of browser magic!"
-# cover:
-#    image: "firefox.png"
-#    alt: "Firefox Offline Error Page"
-#    caption: "Firefox NS_ERROR_OFFLINE screen"
 ---
 
 You type `bbc.com` into Firefox and hit Enter. Instantly, a page loads, but it's not the famous website to check the latest news you were expecting. Instead, you see Firefox's mascot, a cartoon fox, looking dejected as he watches a disconnected cable. The message reads: "Looks like there's a problem with your internet connection" with the code `NS_ERROR_OFFLINE`. ![Firefox Offline Error Page](firefox.png "Firefox NS_ERROR_OFFLINE screen")
